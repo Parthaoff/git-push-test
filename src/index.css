@@ -1,0 +1,31 @@
+/* Style the card  the UI */
+*{
+  body: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+.card{
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.card h2{
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.card p{
+  font-size: 16px;
+  color: #666;
+}
