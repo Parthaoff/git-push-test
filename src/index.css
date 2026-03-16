@@ -1,31 +1,52 @@
-/* Style the card  the UI */
-*{
-  body: 0;
+/* 1. Reset everything cleanly */
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;  
 }
-.card{
+
+/* 2. The Container: This handles the row layout */
+.card-container {
+  display: flex;
+  flex-direction: row;      /* Puts cards in a row */
+  justify-content: center;  /* Centers the cards horizontally */
+  align-items: center;      /* Centers the cards vertically */
+  gap: 20px;                /* Adds neat spacing between the cards */
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  flex-wrap: wrap;          /* Prevents cards from squishing on small screens */
+  padding: 10px;
+}
+
+/* 3. The Card: This handles the internal layout */
+.card {
   width: 300px;
   height: 400px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   display: flex;
-  flex-direction: column;
+  flex-direction: column;   /* CHANGED: Stacks the image, h2, and p vertically */
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  text-align: center;
 }
-.card img{
+
+.card img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
+  object-fit: cover;        /* Keeps the image from distorting */
 }
-.card h2{
+
+.card h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
-.card p{
+
+.card p {
   font-size: 16px;
   color: #666;
 }

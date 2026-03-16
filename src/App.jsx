@@ -5,35 +5,57 @@ import './App.css'
 import Card from './components/Card'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const data = [
+    {
+      id: 1,
+      name: 'John Doe',
+      designation: 'Software Engineer',
+      pay: '$50/hour',
+      logo: 'https://randomuser.me/api/portraits/men/76.jpg'
+    },
+    {
+      id: 2,
+      name: 'Jane Smith',
+      designation: 'Product Manager',
+      pay: '$60/hour',
+      logo: 'https://randomuser.me/api/portraits/women/75.jpg'
+    },
+    {
+      id: 3,
+      name: 'Michael Johnson',
+      designation: 'UX Designer',
+      pay: '$40/hour',
+      logo: 'https://randomuser.me/api/portraits/men/76.jpg'
+    },
+    {
+      id: 4,
+      name: 'Emily Davis',
+      designation: 'Data Scientist',
+      pay: '$70/hour',
+      logo: 'https://randomuser.me/api/portraits/women/75.jpg'
+    },
+    {
+      id: 5,
+      name: 'David Wilson',
+      designation: 'DevOps Engineer',
+      pay: '$55/hour',
+      logo: 'https://randomuser.me/api/portraits/men/76.jpg'
+    }
+  ]
 
   return (
-    // <>
-    //   <div>
-    //     <a href="https://vitejs.dev" target="_blank">
-    //       <img src={viteLogo} className="logo" alt="Vite logo" />
-    //     </a>
-    //     <a href="https://react.dev" target="_blank">
-    //       <img src={reactLogo} className="logo react" alt="React logo" />
-    //     </a>
-    //   </div>
-    //   <h1>Vite + React</h1>
-    //   <div className="card">
-    //     <button onClick={() => setCount((count) => count + 1)}>
-    //       count is {count}
-    //     </button>
-    //     <p>
-    //       Edit <code>src/App.jsx</code> and save to test HMR
-    //     </p>
-    //   </div>
-    //   <p className="read-the-docs">
-    //     Click on the Vite and React logos to learn more
-    //   </p>
-    // </>
-
-    <>
-      <Card/>
-    </>
+    // The container goes OUTSIDE the map function
+    <div className="card-container">
+      {data.map((user) => (
+        <Card
+          key={user.id} // The key goes on the element directly returned by map
+          name={user.name}
+          designation={user.designation}
+          pay={user.pay}
+          logo={user.logo}
+        />
+      ))}
+    </div>
   )
 }
 

@@ -1,18 +1,13 @@
 //User Card with User Logo, Description, Designation, Pay/hour in Dollars, Hire Button
-import React from 'react'
-
-const Card = () => {
+const Card = (props) => {
   return (
-    <div>
-        {/* <h1>Hello, World!</h1> */}
         <div className='card'>
-            <img src='https://randomuser.me/api/portraits/men/75.jpg' alt='User Logo' className='user-logo'/>
-            <h2>John Doe</h2>
-            <p>Software Engineer</p>
-            <p>$50/hour</p>
+            <img src={props.logo} alt='User Logo' className='user-logo'/>
+            <h2>{props.name}</h2>
+            <p>{props.designation}</p>
+            <p>{props.pay}</p>
             <button className='hire-button'>Hire</button>
         </div>
-    </div>
   )
 }
 
